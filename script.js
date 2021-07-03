@@ -1,46 +1,32 @@
-
-function playRound(playerSelection, computerSelection){
+function playRound(playerSelection){
     /* 1 equals player win, 0 equals computer win, 2 equals draw*/
-
+    computerSelection = computerPlay()
     if (playerSelection == "paper" && computerSelection == "rock"){
-        console.log("You choice: paper, computer's choice: rock")
-        console.log("paper beats rock, you win this round")
-        return 1
+        return [1, "You choice: paper, computer's choice: rock. Paper beats rock, you win this round"]
     }
 
     if (playerSelection == "paper" && computerSelection == "scissors"){
-        console.log("You choice: paper, computer's choice: scissors")
-        console.log("scissors beats paper, you lose this round")
-        return 0
+        return [0, "You choice: paper, computer's choice: scissors. Scissors beats paper, you lose this round"]
     }
 
     if (playerSelection == "rock" && computerSelection == "scissors"){
-        console.log("You choice: rock, computer's choice: scissors")
-        console.log("rock beats scissors, you win this round")
-        return 1
+        return [1, "You choice: rock, computer's choice: scissors. Rock beats scissors, you win this round"]
     }
 
     if (playerSelection == "rock" && computerSelection == "paper"){
-        console.log("You choice: rock, computer's choice: paper")
-        console.log("paper beats rock, you lose this round")
-        return 0
+        return[0, "You choice: rock, computer's choice: paper. Paper beats rock, you lose this round"]
     }
 
     if (playerSelection == "scissors" && computerSelection == "paper"){
-        console.log("You choice: scissors, computer's choice: paper")
-        console.log("scissors beats paper, you win this round")
-        return 1
+        return [1, "You choice: scissors, computer's choice: paper. Scissors beats paper, you win this round"]
     }
 
     if (playerSelection == "scissors" && computerSelection == "rock"){
-        console.log("You choice: scissors, computer's choice: rock")
-        console.log("rock beats scissors, you lose this round")
-        return 0
+        return [0, "You choice: scissors, computer's choice: rock. Rock beats scissors, you lose this round"]
     }
 
     if (playerSelection == computerSelection){
-        console.log("Draw! Keep Playing!")
-        return 2
+        return [2, "Draw! Keep Playing!"]
     }
 }
 
@@ -61,44 +47,22 @@ function computerPlay(){
     }
 }
 
+
 function main(){
-    let i = 1
-    let playerScore = 0
-    let computerScore = 0
+    const currentRound = document.querySelector("#current-round")
+    const total = document.querySelector("#total")
+    const buttons = document.querySelectorAll('button');
 
-    while (playerScore <= 4){
-        let playerSelection = prompt("What's your sign?")
-        playerSelection = playerSelection.toLowerCase()
-        const computerSelection = computerPlay()
-        let result = playRound(playerSelection, computerSelection)
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            currentRound.innerHTML = ""
+            let roundResult = playRound(button.id)
+            let notoficationText = document.createElement('p');
+            notoficationText.textContent = roundResult[1]
+            currentRound.appendChild(notoficationText)
+        });
+    });
 
-        
-
-        switch(result){
-            case (0): {
-                computerScore = computerScore + 1
-                break
-            }
-            case (1): {
-                playerScore = playerScore + 1
-                break
-            }
-            case (2): continue
-        }
-
-        console.log("current score: you - " + playerScore + " computer - " + computerScore)
-        console.log("")
-
-
-        if (playerScore == 3){
-            console.log("You Won")
-            break
-        }
-        if (computerScore == 3){
-            console.log("Computer Won")
-            break
-        }
-    }
 }
 
 main()
