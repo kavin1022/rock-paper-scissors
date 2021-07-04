@@ -19,15 +19,15 @@ function playRound(playerSelection){
     /* 1 equals player win, 0 equals computer win, 2 equals draw*/
     computerSelection = computerPlay()
     if (playerSelection == "paper" && computerSelection == "rock"){
-        return [1, "You choice: paper, Computer's choice: rock. Paper beats rock, you win this round"];
+        return [1, "Your choice: paper, Computer's choice: rock. Paper beats rock, you win this round"];
     }
 
     if (playerSelection == "paper" && computerSelection == "scissors"){
-        return [0, "You choice: paper, Computer's choice: scissors. Scissors beats paper, you lose this round"];
+        return [0, "Your choice: paper, Computer's choice: scissors. Scissors beats paper, you lose this round"];
     }
 
     if (playerSelection == "rock" && computerSelection == "scissors"){
-        return [1, "You choice: rock, Computer's choice: scissors. Rock beats scissors, you win this round"];
+        return [1, "Your choice: rock, Computer's choice: scissors. Rock beats scissors, you win this round"];
     }
 
     if (playerSelection == "rock" && computerSelection == "paper"){
@@ -35,11 +35,11 @@ function playRound(playerSelection){
     }
 
     if (playerSelection == "scissors" && computerSelection == "paper"){
-        return [1, "You choice: scissors, Computer's choice: paper. Scissors beats paper, you win this round"];
+        return [1, "Your choice: scissors, Computer's choice: paper. Scissors beats paper, you win this round"];
     }
 
     if (playerSelection == "scissors" && computerSelection == "rock"){
-        return [0, "You choice: scissors, Computer's choice: rock. Rock beats scissors, you lose this round"];
+        return [0, "Your choice: scissors, Computer's choice: rock. Rock beats scissors, you lose this round"];
     }
 
     if (playerSelection == computerSelection){
@@ -75,7 +75,7 @@ function sliceText(text){
 }
 
 function updateTextArea(roundResult){
-    const currentRound = document.querySelector("#current-round");
+    const currentRound = document.querySelector("#results-div");
     currentRound.innerHTML = "";
     let decisionText = document.createElement('p');
     let resultText = document.createElement('p');
