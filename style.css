@@ -1,4 +1,95 @@
-#results-div{
+html{
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+}
+
+h3{
+    padding: 0;
+    margin: 0;
+    padding-left: 50px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+#round-result{
+    text-align: center;
+    margin-top: 60px;
+}
+header{
+    text-align: left;
+    width: 100vw;
+    background-color: #6200ee;
+    color: #fff;
+    font-size: large;
+    height: 50px;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+#game-area-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 150px;
+}
+
+#play-area{
     border-style: solid;
     border-width: 1px;
+    padding: 20px;
+    height: 500px;
+}
+
+.option-button{
+    position: relative;
+    overflow: hidden;
+    transition: background 400ms;
+    color: #fff;
+    background-color: #6200ee;
+    width: 100px;
+    height: 30px;
+    font-family: 'Roboto', sans-serif;
+    outline: 0;
+    border: 0;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+h4{
+    text-align: center;
+    padding-top: 40px;
+}
+
+.score{
+    font-size: 40px;
+}
+
+#score-board{
+    width: 500px;
+    text-align: center;
+}
+#option-button-container{
+    padding-top: 200px;
+}
+span.ripple {
+    position: absolute; /* The absolute position we mentioned earlier */
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  @keyframes ripple {
+      to{
+          transform: scale(4);
+          opacity: 0;
+      }
+  }
+
+.option-button:hover{
+    cursor: pointer;
 }

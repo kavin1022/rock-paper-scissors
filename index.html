@@ -1,18 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Rock Paper Scissors with Material Design</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 <body>
-    <div id="results-div">
-        <p>Welcome to Rock Paper Scissors! Click on a button below to start playing</p>
-        <div id="current-round"></div>
-        
-    </div>
-    <div>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+    <header>
+        <h3>Rock Paper Scissors</h3>
+    </header>
+    
+    <div id="game-area-container">
+        <div id="play-area">
+            <p>Your Play</p>
+            <div id = "round-result">
+                <h4>Round Won:</h4>
+                <span class = "score" id="player-result">0</span>
+            </div>
+            <div id="option-button-container">
+                <button class="option-button" id="rock">Rock</button>
+                <button class="option-button" id="paper">Paper</button>
+                <button class="option-button" id="scissors">Scissors</button>
+            </div>
+        </div>
+    
+        <div id = "score-board">
+            <div id="results-div">
+                <p>Welcome to Rock Paper Scissors!</p>
+                <div id="current-round"></div>
+            </div>
+        </div>
+
+        <div id="play-area">
+            <p>Computer's Play</p>
+            <div id = "round-result">
+                <h4>Round Won:</h4>
+                <span class="score" id="computer-result">0</span>
+            </div>
+            <div id="option-button-container">
+                <button class="option-button" disabled id="rock">Rock</button>
+                <button class="option-button" disabled id="paper">Paper</button>
+                <button class="option-button" disabled id="scissors">Scissors</button>
+            </div>
+        </div>
     </div>
 
 </body>
